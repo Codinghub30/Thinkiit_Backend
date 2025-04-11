@@ -1,0 +1,72 @@
+{
+    "_id": {
+      "$oid": "678a15e1b9bf72aefacdd0cb"
+    },
+    "QID": "PHY-C-5001",
+    "CmpQStart": "PHY-C-5001",
+    "Class": "6",
+    "Subject": "Physics",
+    "CmpEnglish": " Ravan wanted to build a stair case to heaven. His plan was foiled by Lord Rama who killed him in the battle. With that unfulfilled desire, Ravan has been born again. Now he is a head scientist in Indian space research organization. He now plans to do the next best thing: build a stair case to a geostationary satellite of earth. He chooses a point vertically below the geostationary satellite on the earth. The stair case starts from that point and goes all the way up to the satellite. Now Ravan wants to climb up the stair case to the satellite slowly. Obviously, he is smart enough to have an oxygen cylinder and mask so that he does not die of suffocation. His mass with his contraption is m . Take the geostationary satellite to be at a height h above the surface of earth (mass M, radius R).",
+    "CmpHindi": " 5 किग्रा द्रव्यमान का एक मनका क्षैतिज छड़ AB पर फिसलने के लिए स्वतंत्र है। यह दो से जुड़ा है, जैसा कि दिखाया गया है, प्राकृतिक लंबाई $h$ के समान स्प्रिंग्स। यदि प्रारंभ में मनका $O$ पर था और $M$ लंबवत L से नीचे था, तो बिंदु N पर मनका का वेग होगा। 5 किग्रा द्रव्यमान का एक मनका क्षैतिज छड़ AB पर फिसलने के लिए स्वतंत्र है। यह दो से जुड़ा है, जैसा कि दिखाया गया है, प्राकृतिक लंबाई $h$ के समान स्प्रिंग्स। यदि प्रारंभ में मनका $O$ पर था और $M$ लंबवत $L$ से नीचे था, तो बिंदु $N$ पर मनका का वेग होगा। 5 किग्रा द्रव्यमान का एक मनका क्षैतिज छड़ AB पर फिसलने के लिए स्वतंत्र है। यह दो से जुड़ा है, जैसा कि दिखाया गया है, प्राकृतिक लंबाई $h$ के समान स्प्रिंग्स। यदि प्रारंभ में मनका $O$ पर था और $M$ लंबवत $L$ से नीचे था, तो बिंदु N पर मनका का वेग होगा।",
+    "CmpGujarati": " 5 કિગ્રા સમૂહ્નો મણકો આડી સળિયા $A B$ પર સ્લાઇડ કરવા માટે મુક્ત છે. તે બે સાથે જોડાયેલ છે બતાવ્યા પ્રમાણે કુદરતી લંબાઈ $h$ ના સમાન ઝરણા. જો શરૂઆતમાં મણકો $O \\& M$ પર હતો તો તે ઊભી છે પછી $L$ ની નીચે, બિંદુ N પર મણકાનો વેગ હશે 5 કિગ્રા સમૂહનો મણકો આડી સળિયા AB પર સ્લાઇડ કરવા માટે મુક્ત છે. તે બે સાથે જોડાયેલ છે બતાવ્યા પ્રમાણે કુદરતી લંબાઈ h ના સમાન ઝરણા. જો શરૂઆતમાં મણકો $\\mathrm{O} \\& \\mathrm{M}$ પર હતો તો તે ઊભી છે પછી $L$ ની નીચે, બિંદુ N પર મણકાનો વેગ હશે 5 કિગ્રા સમૂહનો મણકો આડી સળિયા $A B$ પર સ્લાઇડ કરવા માટે મુક્ત છે. તે બે સાથે જોડાયેલ છે બતાવ્યા પ્રમાણે કુદરતી લંબાઈ h ના સમાન ઝરણા. જો શરૂઆતમાં મણકો O \\& M પર હતો તો તે ઊભી છે પછી L ની નીચે, બિંદુ N પર મણકાનો વેગ હશે",
+    "SubQuestions": [
+      {
+        "QID": "PHY-C-5001->1",
+        "QStart": "PHY-C-5001->1",
+        "Class": "6",
+        "Subject": "Physics",
+        "Type": "SCQ",
+        "Chapter": "Work, Energy and Power",
+        "Topic": "Work energy theorem and its application, type of energy",
+        "Difficulty": "High",
+        "AppearedIn": "2024-Exam",
+        "English": " A bead of mass 5 kg is free to slide on the horizontal rod AB. It is connected to two identical springs of natural length h as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below $L$ then, velocity of bead at point N will be A bead of mass 5 kg is free to slide on the horizontal rod AB. It is connected to two identical springs of natural length $h$ as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below L then, velocity of bead at point N will be A bead of mass 5 kg is free to slide on the horizontal rod AB . It is connected to two identical springs of natural length h as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below L then, velocity of bead at point N will be A bead of mass 5 kg is free to slide on the horizontal rod AB . It is connected to two identical springs of natural length h as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below L then, velocity of bead at point N will be\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-2}",
+        "OptionsEnglish": " (1) $5 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(2) $40 \\mathrm{~h} / 3 \\mathrm{~m} / \\mathrm{s}$\\\\(3) $8 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(4) none of these",
+        "Hindi": " 5 किग्रा द्रव्यमान का एक मनका क्षैतिज छड़ AB पर फिसलने के लिए स्वतंत्र है। यह दो से जुड़ा है, जैसा कि दिखाया गया है, प्राकृतिक लंबाई $h$ के समान स्प्रिंग्स। यदि प्रारंभ में मनका $O$ पर था और $M$ लंबवत $L$ से नीचे था, तो बिंदु N पर मनका का वेग होगा।\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-2(1)}",
+        "OptionsHindi": " (1) $5 \\mathrm{hm} / \\mathrm{s}$\\\\(2) $40 \\mathrm{~h} / 3 \\mathrm{~m} / \\mathrm{s}$\\\\(3) $8 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(4) none of these",
+        "Gujarati": " 5 કિગ્રા સમૂહ્નો મણકો આડી સળિયા AB પર સ્લાઇડ કરવા માટે મુક્ત છે. તે બે સાથે જોડાયેલ છે બતાવ્યા પ્રમાણે કુદરતી લંબાઈ h ના સમાન ઝરણા. જો શરૂઆતમાં મણકો $O$ \\& $M$ પર હતો તો તે ઊભી છે પછી L ની નીચે, બિંદુ N પ૨ મણકાનો વેગ હશે\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-3(1)}\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-3}",
+        "OptionsGajarati": " (1) $5 \\mathrm{hm} / \\mathrm{s}$\\\\(2) $40 \\mathrm{~h} / 3 \\mathrm{~m} / \\mathrm{s}$\\\\(3) $8 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(4) none of these",
+        "NoOfOptions": "4",
+        "Options": "1&2&3&4",
+        "Answer": "6",
+        "SolutionSteps": "",
+        "SolutionVideo": "PHY-C-5001_v",
+        "QEnd": "PHY-C-5001->1",
+        "KSolutionSteps:": "\\\\"
+      },
+      {
+        "QID": "PHY-C-5001->2",
+        "QStart": "PHY-C-5001->2",
+        "Class": "6",
+        "Subject": "Physics",
+        "Type": "SCQ",
+        "Chapter": "Work, Energy and Power",
+        "Topic": "Work energy theorem and its application, type of energy",
+        "Difficulty": "High",
+        "AppearedIn": "2024-Exam",
+        "English": " A bead of mass 5 kg is free to slide on the horizontal rod AB. It is connected to two identical springs of natural length h as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below $L$ then, velocity of bead at point N will be A bead of mass 5 kg is free to slide on the horizontal rod AB. It is connected to two identical springs of natural length $h$ as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below L then, velocity of bead at point N will be A bead of mass 5 kg is free to slide on the horizontal rod AB . It is connected to two identical springs of natural length h as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below L then, velocity of bead at point N will be A bead of mass 5 kg is free to slide on the horizontal rod AB . It is connected to two identical springs of natural length h as shown. If initially bead was at $\\mathrm{O} \\& \\mathrm{M}$ is vertically below L then, velocity of bead at point N will be\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-2}",
+        "OptionsEnglish": " (1) $5 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(2) $40 \\mathrm{~h} / 3 \\mathrm{~m} / \\mathrm{s}$\\\\(3) $8 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(4) none of these",
+        "Hindi": " 5 किग्रा द्रव्यमान का एक मनका क्षैतिज छड़ AB पर फिसलने के लिए स्वतंत्र है। यह दो से जुड़ा है, जैसा कि दिखाया गया है, प्राकृतिक लंबाई $h$ के समान स्प्रिंग्स। यदि प्रारंभ में मनका $O$ पर था और $M$ लंबवत $L$ से नीचे था, तो बिंदु N पर मनका का वेग होगा।\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-2(1)}",
+        "OptionsHindi": " (1) $5 \\mathrm{hm} / \\mathrm{s}$\\\\(2) $40 \\mathrm{~h} / 3 \\mathrm{~m} / \\mathrm{s}$\\\\(3) $8 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(4) none of these",
+        "Gujarati": " 5 કિગ્રા સમૂહ્નો મણકો આડી સળિયા AB પર સ્લાઇડ કરવા માટે મુક્ત છે. તે બે સાથે જોડાયેલ છે બતાવ્યા પ્રમાણે કુદરતી લંબાઈ h ના સમાન ઝરણા. જો શરૂઆતમાં મણકો $O$ \\& $M$ પર હતો તો તે ઊભી છે પછી L ની નીચે, બિંદુ N પ૨ મણકાનો વેગ હશે\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-3(1)}\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_34f765fc713072eec726g-3}",
+        "OptionsGajarati": " (1) $5 \\mathrm{hm} / \\mathrm{s}$\\\\(2) $40 \\mathrm{~h} / 3 \\mathrm{~m} / \\mathrm{s}$\\\\(3) $8 \\mathrm{~h} \\mathrm{~m} / \\mathrm{s}$\\\\(4) none of these",
+        "NoOfOptions": "4",
+        "Options": "1&2&3&4",
+        "Answer": "2",
+        "SolutionSteps": "",
+        "SolutionVideo": "PHY-C-5001_v",
+        "QEnd": "PHY-C-5001->2",
+        "KSolutionSteps:": "\\\\"
+      }
+    ],
+    "Images": {
+      "2025_01_17_34f765fc713072eec726g-2(1)": "/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0HycABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH/2Q==",
+      "2025_01_17_34f765fc713072eec726g-2": "/9j/iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9k=",
+      "2025_01_17_34f765fc713072eec726g-3(1)": "/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hy",
+      "2025_01_17_34f765fc713072eec726g-4(1)": "/9j/=",
+      "2025_01_17_34f765fc713072eec726g-4": "/9j/",
+      "2025_01_17_34f765fc713072eec726g-5(1)": "/9j/"
+    },
+    "CmpQEnd": "PHY-C-5001",
+    "Status": "UNCHECKED"
+  }

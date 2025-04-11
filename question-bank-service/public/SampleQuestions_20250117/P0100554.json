@@ -1,0 +1,29 @@
+{
+  
+    "QID": "P0100554",
+    "QStart": "P0100554",
+    "Class": "11",
+    "Subject": "Physics",
+    "Type": "SCQ",
+    "Chapter": "Work, Power and Energy",
+    "Topic": "Work done by constant force",
+    "Difficulty": "Low",
+    "AppearedIn": "",
+    "English": "\\\\A body of mass 2 kg is kept on a rough horizontal surface as shown in the figure.\\\\Find the work done by frictional force in the time interval $t=0$ to $t=5 \\mathrm{sec}$.\\\\\\includegraphics[max width=\\textwidth, center]{2024_12_17_dbe03ffcf42a6f6bd18eg-1(1)}",
+    "OptionsEnglish": "\\\\(1) zero\\\\(2) +15 J\\\\(3) -20 J\\\\(4) data insufficient",
+    "Hindi": "\\\\2 kg द्रव्यमान की एक वस्तु चित्र में दर्शाये अनुसार एक खुरदरी क्षैतिज सतह पर रखी है। $\\mathrm{t}=0$ से $\\mathrm{t}=5 \\mathrm{sec}$ के समयान्तराल में घर्षण बल द्वारा किया गया कार्य ज्ञात कीजिये।\\\\\\includegraphics[max width=\\textwidth, center]{2024_12_17_dbe03ffcf42a6f6bd18eg-1}",
+    "OptionsHindi": "\\\\(1) शून्य\\\\(2) +15 J\\\\(3) -20 J\\\\(4) आँकड़े अपर्याप्त हैं",
+    "Gujarati": "\\\\",
+    "OptionsGajarati": "\\\\",
+    "NoOfOptions": "4",
+    "Options": "1&2&3&4",
+    "Answer": "1",
+    "SolutionSteps": "",
+    "SolutionVideo": "",
+    "QEnd": "P0100554",
+    "Images": {
+      "2024_12_17_dbe03ffcf42a6f6bd18eg-1(1)": "/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//Z"
+    },
+    "KSolutionSteps:": "\\\\",
+    "Status": "UNCHECKED"
+  }

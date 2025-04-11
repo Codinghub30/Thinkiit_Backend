@@ -1,0 +1,29 @@
+{
+
+    "QID": "P0100389",
+    "QStart": "P0100389",
+    "Class": "11",
+    "Subject": "Physics",
+    "Type": "NTQ",
+    "Chapter": "Work, Energy and Power",
+    "Topic": "Work energy theorem and its application,type of energy",
+    "Difficulty": "Low",
+    "AppearedIn": "",
+    "English": "\\\\As shown in the figure, a particle of mass 10 kg is placed at a point A . When the particle is slightly displaced to its right, it starts moving and reaches the point B . The speed of the particle at $B$ is $x \\mathrm{~m} / \\mathrm{s}$. (Take $\\mathrm{g}=10 \\mathrm{~m} / \\mathrm{s}^{2}$ )\\\\The value of ' $x$ ' to the nearest integer is $\\qquad$\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_bf57a6f519202282d2fdg-1}",
+    "OptionsEnglish": "",
+    "Hindi": "\\\\",
+    "OptionsHindi": "\\\\",
+    "Gujarati": "\\\\",
+    "OptionsGajarati": "\\\\",
+    "NoOfOptions": "0",
+    "Options": "None",
+    "Answer": "10",
+    "SolutionSteps": "Using work energy theorem,\nWg = K.E.\n(10) (g) (5) = 1\n2 (10)v2 – 0\nv = 10 m/s",
+    "SolutionVideo": "",
+    "QEnd": "P0100389",
+    "Images": {
+      "2025_01_17_bf57a6f519202282d2fdg-1": "/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ+IF5q0sfivQ9PsLAQFo5bZwWMm5cLxK3GCx6dutdtRRQB//Z"
+    },
+    "KSolutionSteps:": "\\\\Using work energy theorem,\\[\\mathrm{Wg}=\\Delta \\mathrm{K} . \\mathrm{E} .\\](10) $(\\mathrm{g})(5)=\\frac{1}{2}(10) \\mathrm{v} 2-0$\\\\$\\mathrm{v}=10 \\mathrm{~m} / \\mathrm{s}$\\\\",
+    "Status": "UNCHECKED"
+  }

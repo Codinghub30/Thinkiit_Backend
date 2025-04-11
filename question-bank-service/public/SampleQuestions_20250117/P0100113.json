@@ -1,0 +1,26 @@
+{
+
+    "QID": "P0100113",
+    "QStart": "P0100113",
+    "Class": "11",
+    "Subject": "Physics",
+    "Type": "SCQ",
+    "Chapter": "Work, Power and Energy",
+    "Topic": "Work done by constant force",
+    "Difficulty": "Low",
+    "AppearedIn": "",
+    "English": "\\\\A 50 kg man with 20 kg load on his head climbs up 20 steps of 0.25 m height each.\\\\The work done by the man on the block during climbing is\\\\",
+    "OptionsEnglish": "\\\\(1) 5 J\\\\(2) 350 J\\\\(3) 1000 J\\\\(4) 3540 J",
+    "Hindi": "\\\\",
+    "OptionsHindi": "\\\\",
+    "Gujarati": "\\\\50 kg નો એક માણસ 20 kg સામાન તેના માથે લઈને 20 પગથિયા ચડે છે. 0.25 m ઊંચાઈનું એક પગથિયું છે. માણસ દ્દારા ચઢાણ દરમ્યાન બ્લોક પર થતું કાર્ય\\\\",
+    "OptionsGajarati": "\\\\(1) 5 J\\\\(2) 350 J\\\\(3) 1000 J\\\\(4) 3540 J",
+    "NoOfOptions": "4",
+    "Options": "1&2&3&4",
+    "Answer": "3",
+    "SolutionSteps": "W = 20 × 10 × 20 × 0.25 = 1000 J",
+    "SolutionVideo": "",
+    "QEnd": "P0100113",
+    "KSolutionSteps:": "\\[\\mathrm{W}=20 \\times 10 \\times 20 \\times 0.25=1000 \\mathrm{~J}\\]",
+    "Status": "UNCHECKED"
+  }

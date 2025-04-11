@@ -1,0 +1,29 @@
+{
+
+    "QID": "P0100568",
+    "QStart": "P0100568",
+    "Class": "11",
+    "Subject": "Physics",
+    "Type": "MCQ",
+    "Chapter": "Work, Energy and Power",
+    "Topic": "Work done by constant force",
+    "Difficulty": "Medium",
+    "AppearedIn": "",
+    "English": "\\\\A smooth track in the form of a quarter circle of radius 6 m lies in the vertical plane.\\\\A particle moves from $P_{1}$ to $P_{2}$ under the action of forces $\\vec{F}_{1}, \\vec{F}_{2}$ and $\\vec{F}_{3}$. Force $\\vec{F}_{1}$ is always toward $\\mathrm{P}_{2}$ and is always 20 N in magnitude. Force $\\overrightarrow{\\mathrm{F}}_{2}$ always acts horizontally and is always 30 N in magnitude. Force $\\overrightarrow{\\mathrm{F}}_{3}$ always acts tangentially to the track and is of magnitude 15 N . Select the correct alternative(s)\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_4546ffa27cfd5ba5ee77g-1}",
+    "OptionsEnglish": "\\\\(1) work done by $\\overrightarrow{\\mathrm{F}}_{1}$ is 120 J\\\\(2) work done by $\\vec{F}_{2}$ is 180 J\\\\(3) work done by $\\vec{F}_{3}$ is $45 \\pi$\\\\(4) $\\overrightarrow{\\mathrm{F}}_{1}$ is conservative in nature\\section*{",
+    "Hindi": "}6 m त्रिज्या के एक चतुर्थांश वृत्त के रूप में एक चिकना पथ ऊर्ध्व तल में रखा है। एक कण बल $\\overrightarrow{\\mathrm{F}}_{1}, \\overrightarrow{\\mathrm{~F}}_{2}$ व $\\overrightarrow{\\mathrm{F}}_{3}$ के प्रभाव में $\\mathrm{P}_{1}$ से $\\mathrm{P}_{2}$ तक गति करता है। बल $\\overrightarrow{\\mathrm{F}}_{1}$ सदा $\\mathrm{P}_{2}$ की ओर होता है तथा परिमाण में सदा 20 N होता है। बल $\\overrightarrow{\\mathrm{F}}_{2}$ सदा क्षैतिजतः कार्य करता है तथा परिमाण में सदा 30 N होता है। बल $\\overrightarrow{\\mathrm{F}}_{3}$ सदा पथ के स्पर्श रेखीय रूप से कार्य करता है तथा 15 N परिमाण का है। सही विकल्प चुनिये।\\\\\\includegraphics[max width=\\textwidth, center]{2025_01_17_4546ffa27cfd5ba5ee77g-2}",
+    "OptionsHindi": "\\\\(1) $\\overrightarrow{\\mathrm{F}}_{1}$ द्वारा किया गया कार्य 120 J है।\\\\(2) $\\overrightarrow{\\mathrm{F}}_{2}$ द्वारा किया गया कार्य 180 J है।\\\\(3) $\\vec{F}_{3}$ द्वारा किया गया कार्य $45 \\pi$ है।\\\\(4) $\\overrightarrow{\\mathrm{F}}_{1}$ प्रकृति में संरक्षी है।",
+    "Gujarati": "\\section*{",
+    "OptionsGajarati": "}",
+    "NoOfOptions": "4",
+    "Options": "1&2&3&4",
+    "Answer": "2&3&4",
+    "SolutionSteps": "Work done by F2 is W2 = 30 × 6 = 180 J\nWork done by F3 is W3 = 15 ×\n\n\n\n\n\n\n\n\n4\n6\n2\n= 45 J\n1F\nis a central force with a constant magnitude. So its work done depends on initial &\nfind positons only.",
+    "SolutionVideo": "",
+    "QEnd": "P0100568",
+    "Images": {
+      "2025_01_17_4546ffa27cfd5ba5ee77g-1": "/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJCACiiigAooooAKKKKACiiigAooooAKKKKACiiigAxRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH/2Q=="
+    },
+    "KSolutionSteps:": "\\\\Work done by $\\mathrm{F}_{2}$ is $\\mathrm{W}_{2}=30 \\times 6=180 \\mathrm{~J}$\\\\Work done by $\\mathrm{F}_{3}$ is $\\mathrm{W}_{3}=15 \\times\\left(\\frac{2 \\pi \\times 6}{4}\\right)=45 \\pi \\mathrm{~J}$\\\\$\\overrightarrow{\\mathrm{F}}_{1}$ is a central force with a constant magnitude. So its work done depends on initial \\& find positons only.\\\\",
+    "Status": "UNCHECKED"
+  }
