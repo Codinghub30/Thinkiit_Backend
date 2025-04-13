@@ -8,64 +8,64 @@ const normalize = (str) => str.trim().toLowerCase();
 
 exports.createTest = async (req, res) => {
   try {
+    // const { testName, className, sections, testPattern, selectionType } =
     const { testName, className, sections, testPattern, selectionType } =
       req.body;
     const updatedSections = [];
 
-    for (const section of sections) {
-      if (selectionType === "QID" && section.questionBankQuestionId?.length) {
-        const { data } = await axios.post(
-          "http://localhost:8003/api/QB/getchapterByIds",
-          { qids: section.questionBankQuestionId }
-        );
+    // for (const section of sections) {
+    //   if (selectionType === "QID" && section.questionBankQuestionId?.length) {
+    //     const { data } = await axios.post(
+    //       "http://localhost:8003/api/QB/getchapterByIds",
+    //       { qids: section.questionBankQuestionId }
+    //     );
 
-        const questions = data?.data || [];
+    //     const questions = data?.data || [];
 
-        const chapterMap = new Map(); // normalizedChapter -> chapter object
-        const topicMap = new Map(); // normalizedChapter_normalizedTopic -> topic object
-        const chapterOriginalMap = new Map(); // normalizedChapter -> originalChapterName
+    //     const chapterMap = new Map(); // normalizedChapter -> chapter object
+    //     const topicMap = new Map(); // normalizedChapter_normalizedTopic -> topic object
+    //     const chapterOriginalMap = new Map(); // normalizedChapter -> originalChapterName
 
-        questions.forEach((q) => {
-          const rawChapter = q.Chapter;
-          const rawTopic = q.Topic;
-          const normalizedChapter = normalize(rawChapter);
-          const normalizedTopic = normalize(rawTopic);
-          const topicKey = `${normalizedChapter}_${normalizedTopic}`;
+    //     questions.forEach((q) => {
+    //       const rawChapter = q.Chapter;
+    //       const rawTopic = q.Topic;
+    //       const normalizedChapter = normalize(rawChapter);
+    //       const normalizedTopic = normalize(rawTopic);
+    //       const topicKey = `${normalizedChapter}_${normalizedTopic}`;
 
+    //       // Save original chapter casing for first occurrence
+    //       if (rawChapter && !chapterOriginalMap.has(normalizedChapter)) {
+    //         chapterOriginalMap.set(normalizedChapter, rawChapter);
+    //       }
 
-          // Save original chapter casing for first occurrence
-          if (rawChapter && !chapterOriginalMap.has(normalizedChapter)) {
-            chapterOriginalMap.set(normalizedChapter, rawChapter);
-          }
+    //       // Chapter deduplication
+    //       if (rawChapter && !chapterMap.has(normalizedChapter)) {
+    //         chapterMap.set(normalizedChapter, {
+    //           chapterId: chapterOriginalMap.get(normalizedChapter),
+    //           chapterName: chapterOriginalMap.get(normalizedChapter),
+    //         });
+    //       }
 
-          // Chapter deduplication
-          if (rawChapter && !chapterMap.has(normalizedChapter)) {
-            chapterMap.set(normalizedChapter, {
-              chapterId: chapterOriginalMap.get(normalizedChapter),
-              chapterName: chapterOriginalMap.get(normalizedChapter),
-            });
-          }
+    //       // Topic deduplication and count
+    //       if (rawTopic && rawChapter) {
+    //         if (topicMap.has(topicKey)) {
+    //           topicMap.get(topicKey).numberOfQuestions += 1;
+    //         } else {
+    //           topicMap.set(topicKey, {
+    //             topicName: rawTopic,
+    //             numberOfQuestions: 1,
+    //             chapterId: chapterOriginalMap.get(normalizedChapter),
+    //           });
+    //         }
+    //       }
+    //     });
 
-          // Topic deduplication and count
-          if (rawTopic && rawChapter) {
-            if (topicMap.has(topicKey)) {
-              topicMap.get(topicKey).numberOfQuestions += 1;
-            } else {
-              topicMap.set(topicKey, {
-                topicName: rawTopic,
-                numberOfQuestions: 1,
-                chapterId: chapterOriginalMap.get(normalizedChapter),
-              });
-            }
-          }
-        });
+    //     section.chapter = Array.from(chapterMap.values());
+    //     section.topic = Array.from(topicMap.values());
+    //   }
 
-        section.chapter = Array.from(chapterMap.values());
-        section.topic = Array.from(topicMap.values());
-      }
-
-      updatedSections.push(section);
-    }
+    //   updatedSections.push(section);
+    // }
 
     const newTest = new testModel({
       testName,
@@ -88,72 +88,58 @@ exports.createTest = async (req, res) => {
   }
 };
 
-exports.createSection = async (req,res) => {
-  try{
+exports.createSection = async (req, res) => {
+  try {
+    const { testId } = req.params;
 
-  const { testId } = req.params;
+    const {
+      sectionName,
+      questionType,
+      correctAnswerMarks,
+      negativeMarks,
+      questionBankQuestionId,
+      chapter,
+      topic,
+      subject,
+    } = req.body;
 
-  const {
-    sectionName,
-    questionType,
-    correctAnswerMarks,
-    negativeMarks,
-    questionBankQuestionId,
-    chapter,
-    topic,
-    subject,
-  } = req.body;
+    const newSection = {
+      sectionName: sectionName || "",
+      questionType: questionType || "SCQ",
+      correctAnswerMarks: correctAnswerMarks || 0,
+      negativeMarks: negativeMarks || 0,
+      questionBankQuestionId: questionBankQuestionId || [],
+      chapter: chapter || [],
+      topic: topic || [],
+      subject: subject || [],
+      sectionStatus: "incomplete",
+    };
 
-  const newSection = {
-    sectionName: sectionName || "",
-    questionType: questionType || "SCQ",
-    correctAnswerMarks: correctAnswerMarks || 0,
-    negativeMarks: negativeMarks || 0,
-    questionBankQuestionId: questionBankQuestionId || [],
-    chapter: chapter || [],
-    topic: topic || [],
-    subject: subject || [],
-    sectionStatus: "incomplete",
-  };
+    const updateTest = await testModel.findByIdAndUpdate(
+      testId,
+      {
+        $push: { sections: newSection },
+      },
+      { new: true }
+    );
 
-  const updateTest = await testModel.findByIdAndUpdate(testId,{
-    $push: {sections: newSection}},
-    {new: true}
-  );
-
-
-  res.status(200).json({
-    success: true,
-    message:"Section added successfully",
-    data:updateTest,
-  })
-
-  }
-  catch (error) {
+    res.status(200).json({
+      success: true,
+      message: "Section added successfully",
+      data: updateTest,
+    });
+  } catch (error) {
     console.error("Error adding section:", error);
     res.status(500).json({ success: false, message: "Server error" });
-  } 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+};
 
 exports.deleteTest = async (req, res) => {
   try {
     const { testId } = req.body;
 
     const deletedTest = await testModel.findByIdAndDelete(testId);
-    
+
     if (!deletedTest) {
       return res.status(404).json({
         success: false,
@@ -174,7 +160,7 @@ exports.deleteTest = async (req, res) => {
 exports.addSectionToTest = async (req, res) => {
   try {
     const { testId } = req.params;
-    const section = req.body; 
+    const section = req.body;
 
     if (!section) {
       return res
@@ -185,8 +171,8 @@ exports.addSectionToTest = async (req, res) => {
     const updatedTest = await testModel.findByIdAndUpdate(
       testId,
       {
-        $push: { sections: section }, 
-        $inc: { noOfSections: 1 }, 
+        $push: { sections: section },
+        $inc: { noOfSections: 1 },
       },
       { new: true }
     );
@@ -279,9 +265,6 @@ exports.updateSectionDetails = async (req, res) => {
   try {
     const { testId, sectionId } = req.params;
     const { topics, chapter, questionSelection } = req.body;
-
-
-
 
     // Find and update only the necessary fields
     const updatedTest = await testModel.findOneAndUpdate(
@@ -397,7 +380,9 @@ exports.getTestSectionByTestId = async (req, res) => {
     const test = await testModel.findById(testId).select("sections");
 
     if (!test) {
-      return res.status(404).json({ success: false, message: "Test not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Test not found" });
     }
 
     res.status(200).json({ success: true, sections: test.sections });
@@ -407,26 +392,36 @@ exports.getTestSectionByTestId = async (req, res) => {
   }
 };
 
-
-// add Question manually 
+// add Question manually
 exports.addQuestionManually = async (req, res) => {
   try {
     const { testId } = req.params;
     const { sectionId, questionIds } = req.body;
 
     if (!sectionId || !Array.isArray(questionIds)) {
-      return res.status(400).json({ success: false, message: "sectionId and questionIds[] are required" });
+      return res.status(400).json({
+        success: false,
+        message: "sectionId and questionIds[] are required",
+      });
     }
 
     const test = await testModel.findById(testId);
-    if (!test) return res.status(404).json({ success: false, message: "Test not found" });
+    if (!test)
+      return res
+        .status(404)
+        .json({ success: false, message: "Test not found" });
 
-    const section = test.sections.find(sec => sec._id.toString() === sectionId);
-    if (!section) return res.status(404).json({ success: false, message: "Section not found in test" });
+    const section = test.sections.find(
+      (sec) => sec._id.toString() === sectionId
+    );
+    if (!section)
+      return res
+        .status(404)
+        .json({ success: false, message: "Section not found in test" });
 
     // Merge and deduplicate question IDs
     const existingSet = new Set(section.questionBankQuestionId || []);
-    questionIds.forEach(id => existingSet.add(id));
+    questionIds.forEach((id) => existingSet.add(id));
 
     section.questionBankQuestionId = Array.from(existingSet);
 
@@ -435,18 +430,15 @@ exports.addQuestionManually = async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Question IDs added successfully",
-      updatedQuestionBank: section.questionBankQuestionId
+      updatedQuestionBank: section.questionBankQuestionId,
     });
-
   } catch (error) {
     console.error("Add Question IDs Error:", error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
 
-
-
-// Remove the Topics from section 
+// Remove the Topics from section
 // controllers/testController.js
 
 exports.removeSelectedTopic = async (req, res) => {
@@ -456,12 +448,16 @@ exports.removeSelectedTopic = async (req, res) => {
 
     const test = await testModel.findById(testId);
     if (!test) {
-      return res.status(404).json({ success: false, message: "Test not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Test not found" });
     }
 
     const section = test.sections.id(sectionId);
     if (!section) {
-      return res.status(404).json({ success: false, message: "Section not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Section not found" });
     }
 
     // Filter out the topic
@@ -471,19 +467,20 @@ exports.removeSelectedTopic = async (req, res) => {
 
     await test.save();
 
-    res.status(200).json({ success: true, message: "Topic removed successfully", section });
+    res
+      .status(200)
+      .json({ success: true, message: "Topic removed successfully", section });
   } catch (error) {
     console.error("Error removing topic:", error);
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
 
-
 exports.updateTheTestMode = async (req, res) => {
   try {
     const { testId } = req.params;
-    const { testMode,testDuration } = req.body;
- 
+    const { testMode, testDuration } = req.body;
+
     // Validate input
     if (!testId || !testMode) {
       return res.status(400).json({
@@ -495,7 +492,7 @@ exports.updateTheTestMode = async (req, res) => {
     // Update the testMode
     const updatedTest = await testModel.findOneAndUpdate(
       { _id: testId },
-      { testMode: testMode,testDuration:testDuration },
+      { testMode: testMode, testDuration: testDuration },
       { new: true, runValidators: true }
     );
 
@@ -559,7 +556,7 @@ exports.GetTheQuestionsBytestAndSectionID = async (req, res) => {
 
     return res.status(200).json({
       sectionName: section.subject,
-      questionList: response.data.questions, 
+      questionList: response.data.questions,
     });
   } catch (error) {
     console.error("Error fetching questions:", error);
@@ -613,36 +610,40 @@ exports.GetAllQuestionsByTestID = async (req, res) => {
   }
 };
 
-exports.HandleExcelUpload = async(req,res) => {
-  try{
-    const {testId} = req.params;
+exports.HandleExcelUpload = async (req, res) => {
+  try {
+    const { testId } = req.params;
     const fileBuffer = req.file.buffer;
 
-    const workbook = XLSX.read(fileBuffer, {type: "buffer"});
+    const workbook = XLSX.read(fileBuffer, { type: "buffer" });
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const data = XLSX.utils.sheet_to_json(sheet);
 
+    const qids = data
+      .map((row) => row["Question Id"] || row["QID"])
+      .filter(Boolean);
 
-    const qids = data.map(row => row["Question Id"] || row["QID"]).filter(Boolean);
-
-    if(!qids.length){
-      return res.status(400).json({success: false, message:"No valid QIDs"});
-
+    if (!qids.length) {
+      return res.status(400).json({ success: false, message: "No valid QIDs" });
     }
 
     if (!qids.length) {
-      return res.status(400).json({ success: false, message: "No valid QIDs found." });
+      return res
+        .status(400)
+        .json({ success: false, message: "No valid QIDs found." });
     }
-     const test = await testModel.findById(testId);
-     if(!test){
-      res.status(404).json({message:"Test Not Found"});
-     }
+    const test = await testModel.findById(testId);
+    if (!test) {
+      res.status(404).json({ message: "Test Not Found" });
+    }
 
-     test.sections.forEach((sections) => {
-      sections.questionBankQuestionId = [...new Set([...(sections.questionBankQuestionId|| 0), ...qids])];
-     })
+    test.sections.forEach((sections) => {
+      sections.questionBankQuestionId = [
+        ...new Set([...(sections.questionBankQuestionId || 0), ...qids]),
+      ];
+    });
 
-     await test.save();
+    await test.save();
     // You can now:
     // - Validate QIDs
     // - Save to DB
@@ -650,8 +651,7 @@ exports.HandleExcelUpload = async(req,res) => {
     console.log("Extracted QIDs:", qids);
 
     res.json({ success: true, qids, message: "File processed successfully" });
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching all section questions:", error);
     return res.status(500).json({ message: "Internal server error" });
   }
@@ -661,47 +661,41 @@ exports.HandleExcelUpload = async(req,res) => {
 exports.AddSetionDetails = async (req, res) => {
   const testId = req.params.testId;
   const {
-    sectionId,
+    sectionName,
     subjects,
     negativeMarksPerWrongAnswer,
     marksPerQuestion,
   } = req.body;
 
   try {
-    const existingSection = await testModel.findOne({
-      _id: testId,
-      "sections._id": sectionId,
-    });
+    const test = await testModel.findById(testId);
+    if (!test) {
+      return res.status(404).send({ message: "Test not found!" });
+    }
+
+    // ✅ Look for existing section by sectionName
+    const existingSection = test.sections.find(
+      (sec) =>
+        sec.sectionName?.trim()?.toLowerCase() ===
+        sectionName.trim().toLowerCase()
+    );
 
     if (existingSection) {
-      const sectionIndex = existingSection.sections.findIndex(
-        (section) => section._id.toString() === sectionId
-      );
+      // ✅ Update if sectionName matched
+      existingSection.subjects = subjects;
+      existingSection.negativeMarksPerWrongAnswer = negativeMarksPerWrongAnswer;
+      existingSection.marksPerQuestion = marksPerQuestion;
 
-      if (sectionIndex !== -1) {
-        existingSection.sections[sectionIndex].subjects = subjects;
-        existingSection.sections[sectionIndex].negativeMarksPerWrongAnswer =
-          negativeMarksPerWrongAnswer;
-        existingSection.sections[sectionIndex].marksPerQuestion =
-          marksPerQuestion;
+      await test.save();
 
-        await existingSection.save();
-
-        res
-          .status(200)
-          .send({ message: "Section details updated successfully!" });
-      } else {
-        res.status(404).send({ message: "Section not found!" });
-      }
+      res.status(200).json({
+        // message: "Section details added successfully!",
+        sections: test.sections,
+      });
     } else {
-   
-      const test = await testModel.findById(testId);
-      if (!test) {
-        return res.status(404).send({ message: "Test not found!" });
-      }
-
+      //Add new section if not exists
       const newSection = {
-        _id: sectionId,
+        sectionName,
         subjects,
         negativeMarksPerWrongAnswer,
         marksPerQuestion,
@@ -710,9 +704,10 @@ exports.AddSetionDetails = async (req, res) => {
       test.sections.push(newSection);
       await test.save();
 
-      res
-        .status(200)
-        .send({ message: "Section details added successfully!" });
+      res.status(200).json({
+        // message: "Section details added successfully!",
+        sections: test.sections,
+      });
     }
   } catch (error) {
     console.error(error);
@@ -720,3 +715,53 @@ exports.AddSetionDetails = async (req, res) => {
   }
 };
 
+// udpate summery
+exports.updateSectionMeta = async (req, res) => {
+  const { testId, sectionId } = req.params;
+  const {
+    marksPerQuestion,
+    negativeMarksPerWrongAnswer,
+    minQuestionsAnswerable,
+    testDuration, // if provided, update test duration at test level
+  } = req.body;
+
+  try {
+    // Optional: update test duration
+    if (testDuration !== undefined) {
+      await testModel.findByIdAndUpdate(testId, {
+        testDuration: testDuration.toString(),
+      });
+    }
+
+    const test = await testModel.findOne({ _id: testId });
+    if (!test) return res.status(404).json({ message: "Test not found" });
+
+    const section = test.sections.find(
+      (sec) => sec._id.toString() === sectionId
+    );
+    if (!section) return res.status(404).json({ message: "Section not found" });
+
+    // Apply updates
+    if (marksPerQuestion !== undefined)
+      section.marksPerQuestion = marksPerQuestion;
+    if (negativeMarksPerWrongAnswer !== undefined)
+      section.negativeMarksPerWrongAnswer = negativeMarksPerWrongAnswer;
+    if (minQuestionsAnswerable !== undefined)
+      section.minQuestionsAnswerable = minQuestionsAnswerable;
+
+    await test.save();
+
+    res.status(200).json({ message: "Section metadata updated successfully!" });
+  } catch (err) {
+    console.error("Update error:", err);
+    res.status(500).json({ message: "Failed to update section metadata" });
+  }
+};
+
+updateSectionDetails = async (req, res) => {
+  const { sectionId } = req.params;
+  const updateData = req.body;
+
+  await SectionModel.findByIdAndUpdate(sectionId, updateData);
+  res.json({ success: true });
+};

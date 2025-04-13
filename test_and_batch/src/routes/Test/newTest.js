@@ -30,7 +30,6 @@ router.put(
 
 router.put("/:testId/updateTestMode", testController.updateTheTestMode);
 
-
 router.get("/", testController.getAllTests);
 router.get("/:id", testController.getTestById);
 router.get(
@@ -39,17 +38,33 @@ router.get(
 );
 router.get("/:testId/get-topics", testController.getTestSectionByTestId);
 // routes/testRoutes.js
-router.put("/:testId/sections/:sectionId/remove-topic", testController.removeSelectedTopic);
+router.put(
+  "/:testId/sections/:sectionId/remove-topic",
+  testController.removeSelectedTopic
+);
 router.post("/:testId/add-question-ids", testController.addQuestionManually);
 
-router.get("/getPickedQuestions/:testId", testController.GetAllQuestionsByTestID);
+router.get(
+  "/getPickedQuestions/:testId",
+  testController.GetAllQuestionsByTestID
+);
 
-router.post("/upload-question-excel/:testId", upload.single("file"), testController.HandleExcelUpload);
-
-
+router.post(
+  "/upload-question-excel/:testId",
+  upload.single("file"),
+  testController.HandleExcelUpload
+);
 
 // New API
 router.post("/create-section/:testId", testController.createSection);
 router.post("/add-details/:testId", testController.AddSetionDetails);
+router.put(
+  "/update-section-meta/:testId/:sectionId",
+  testController.updateSectionMeta
+);
+router.put(
+  "/update-section/:testId/:sectionId",
+  testController.updateSectionMeta
+);
 
 module.exports = router;
